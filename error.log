@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "C:\Users\lv517\OneDrive\Documentos\Machine Learning Project\Machine_Learning_Project\main.py", line 79, in <module>
+    main()
+  File "C:\Users\lv517\OneDrive\Documentos\Machine Learning Project\Machine_Learning_Project\main.py", line 73, in main
+    run_dataset("UCI Dataset", load_uci, model_type="gradient_boosting")
+  File "C:\Users\lv517\OneDrive\Documentos\Machine Learning Project\Machine_Learning_Project\main.py", line 32, in run_dataset
+    X_train, X_test, y_train, y_test = scale_split(X, y)
+                                       ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lv517\OneDrive\Documentos\Machine Learning Project\Machine_Learning_Project\utils\preprocessing.py", line 37, in scale_split
+    X_train, X_test, y_train, y_test = train_test_split(
+                                       ^^^^^^^^^^^^^^^^^
+  File "C:\Users\lv517\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\utils\_param_validation.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lv517\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\model_selection\_split.py", line 2940, in train_test_split
+    train, test = next(cv.split(X=arrays[0], y=stratify))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lv517\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\model_selection\_split.py", line 1927, in split
+    for train, test in self._iter_indices(X, y, groups):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lv517\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\sklearn\model_selection\_split.py", line 2342, in _iter_indices
+    raise ValueError(
+ValueError: The least populated class in y has only 1 member, which is too few. The minimum number of groups for any class cannot be less than 2.

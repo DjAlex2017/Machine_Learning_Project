@@ -3,7 +3,9 @@ from sklearn.cluster import KMeans
 from sklearn.manifold import TSNE
 
 def plot_tsne_kmeans(X, title="t-SNE + KMeans", n_clusters=3):
-    tsne = TSNE(n_components=2, random_state=42, perplexity=30)
+    n_samples = X.shape[0]
+    perplexity = min(30, n_samples - 1) if n_samples > 1 else 1
+    tsne = TSNE(n_components=2, random_state=42, perplexity=perplexity)
 
     X_embedded = tsne.fit_transform(X)
 
@@ -16,4 +18,7 @@ def plot_tsne_kmeans(X, title="t-SNE + KMeans", n_clusters=3):
     plt.xlabel("t-SNE 1")
     plt.ylabel("t-SNE 2")
     plt.colorbar()
-    plt.show()
+    plt.colorbar()
+    filename = title.replace(" ", "_").replace("+", "plus")
+    plt.savefig(f"plots/{filename}.png")
+    plt.close()

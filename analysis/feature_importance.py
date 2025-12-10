@@ -11,6 +11,9 @@ def plot_feature_importance(model, feature_names, title):
     plt.title(title)
     plt.xlabel("Importance Score")
     plt.tight_layout()
-    plt.show()
+    plt.tight_layout()
+    filename = title.replace(" ", "_").replace("+", "plus")
+    plt.savefig(f"plots/{filename}.png")
+    plt.close()
 
     return top
