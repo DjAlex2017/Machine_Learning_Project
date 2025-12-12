@@ -14,8 +14,8 @@ def load_mendeley():
     X = df.drop(columns=["Overall", "pass"])
     y = df["pass"]
 
-    # One-hot encode categorical features
-    X = pd.get_dummies(X, drop_first=True)
+    # One-hot encoding should be handled by the pipeline/preprocessing, NOT here.
+    # X = pd.get_dummies(X, drop_first=True)
 
     return X, y
 
